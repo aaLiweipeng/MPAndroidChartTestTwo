@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditActivity">
+
+    <ImageView
+        android:alpha="0.85"
+        android:background="@drawable/bcp1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_margin="18dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/ac_et_et"
+                android:alpha="0.85"
+                android:background="#4D03A9F4"
+                android:textColor="@android:color/white"
+                android:layout_margin="20sp"
+                android:hint="请按以下格式输入数据：\n温度*湿度*光敏电阻阻值*烟雾*"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/ac_et_bt_confirmData"
+                android:text="确认数据"
+                android:alpha="0.85"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="12dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_press_state"/>
+
+            <android.support.v7.widget.CardView
+                android:alpha="0.85"
+                android:id="@+id/ac_et_cardView_WD"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                app:cardCornerRadius="5dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/ac_et_relativeLayoutWD"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/darker_gray">
+
+                    <TextView
+                        android:id="@+id/ac_et_WDTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:padding="15dp"
+                        android:text="温"
+                        android:textColor="@android:color/white"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/ac_et_AvgTag"
+                        style="@style/dataCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/ac_et_WDTag"
+                        android:text="Avg:" />
+                    <TextView
+                        android:id="@+id/ac_et_AvgText"
+                        style="@style/dataCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/ac_et_AvgTag"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/ac_et_MaxTag"
+                        style="@style/dataCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_AvgText"
+                        android:layout_toRightOf="@+id/ac_et_WDTag"
+                        android:text="Max:" />
+                    <TextView
+                        android:id="@+id/ac_et_MaxText"
+                        style="@style/dataCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_AvgText"
+                        android:layout_alignBaseline="@+id/ac_et_MaxTag"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/ac_et_MinTag"
+                        style="@style/dataCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_MaxTag"
+                        android:layout_toRightOf="@+id/ac_et_WDTag"
+                        android:text="Min:" />
+                    <TextView
+                        android:id="@+id/ac_et_MinText"
+                        style="@style/dataCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_MaxText"
+                        android:layout_alignBaseline="@+id/ac_et_MinTag"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/ac_et_cardView_SD"
+                android:alpha="0.85"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                app:cardCornerRadius="5dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/ac_et_relativeLayoutSD"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/darker_gray">
+
+                    <TextView
+                        android:id="@+id/ac_et_SDTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:padding="15dp"
+                        android:text="湿"
+                        android:textColor="@android:color/white"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/ac_et_SDAvgTag"
+                        style="@style/dataCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/ac_et_SDTag"
+                        android:text="Avg:" />
+                    <TextView
+                        android:id="@+id/ac_et_SDAvgText"
+                        style="@style/dataCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/ac_et_SDAvgTag"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/ac_et_SDMaxTag"
+                        style="@style/dataCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_SDAvgText"
+                        android:layout_toRightOf="@+id/ac_et_SDTag"
+                        android:text="Max:" />
+                    <TextView
+                        android:id="@+id/ac_et_SDMaxText"
+                        style="@style/dataCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_SDAvgText"
+                        android:layout_alignBaseline="@+id/ac_et_SDMaxTag"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/ac_et_SDMinTag"
+                        style="@style/dataCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_SDMaxTag"
+                        android:layout_toRightOf="@+id/ac_et_SDTag"
+                        android:text="Min:" />
+                    <TextView
+                        android:id="@+id/ac_et_SDMinText"
+                        style="@style/dataCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_SDMaxText"
+                        android:layout_alignBaseline="@+id/ac_et_SDMinTag"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/ac_et_cardView_GM"
+                android:alpha="0.85"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                app:cardCornerRadius="5dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/ac_et_relativeLayoutGM"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/darker_gray">
+
+                    <TextView
+                        android:id="@+id/ac_et_GMTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:padding="15dp"
+                        android:text="光"
+                        android:textColor="@android:color/white"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/ac_et_GMAvgTag"
+                        style="@style/dataCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/ac_et_GMTag"
+                        android:text="Avg:" />
+                    <TextView
+                        android:id="@+id/ac_et_GMAvgText"
+                        style="@style/dataCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/ac_et_GMAvgTag"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/ac_et_GMMaxTag"
+                        style="@style/dataCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_GMAvgText"
+                        android:layout_toRightOf="@+id/ac_et_GMTag"
+                        android:text="Max:" />
+                    <TextView
+                        android:id="@+id/ac_et_GMMaxText"
+                        style="@style/dataCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_GMAvgText"
+                        android:layout_alignBaseline="@+id/ac_et_GMMaxTag"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/ac_et_GMMinTag"
+                        style="@style/dataCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_GMMaxTag"
+                        android:layout_toRightOf="@+id/ac_et_GMTag"
+                        android:text="Min:" />
+                    <TextView
+                        android:id="@+id/ac_et_GMMinText"
+                        style="@style/dataCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_GMMaxText"
+                        android:layout_alignBaseline="@+id/ac_et_GMMinTag"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/ac_et_cardView_YW"
+                android:alpha="0.85"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                app:cardCornerRadius="5dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/ac_et_relativeLayoutYW"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/darker_gray">
+
+                    <TextView
+                        android:id="@+id/ac_et_YWTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:padding="15dp"
+                        android:text="烟"
+                        android:textColor="@android:color/white"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/ac_et_YWAvgTag"
+                        style="@style/dataCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/ac_et_YWTag"
+                        android:text="Avg:" />
+                    <TextView
+                        android:id="@+id/ac_et_YWAvgText"
+                        style="@style/dataCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/ac_et_YWAvgTag"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/ac_et_YWMaxTag"
+                        style="@style/dataCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_YWAvgText"
+                        android:layout_toRightOf="@+id/ac_et_YWTag"
+                        android:text="Max:" />
+                    <TextView
+                        android:id="@+id/ac_et_YWMaxText"
+                        style="@style/dataCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_YWAvgText"
+                        android:layout_alignBaseline="@+id/ac_et_YWMaxTag"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/ac_et_YWMinTag"
+                        style="@style/dataCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_YWMaxTag"
+                        android:layout_toRightOf="@+id/ac_et_YWTag"
+                        android:text="Min:" />
+                    <TextView
+                        android:id="@+id/ac_et_YWMinText"
+                        style="@style/dataCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ac_et_YWMaxText"
+                        android:layout_alignBaseline="@+id/ac_et_YWMinTag"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</FrameLayout>

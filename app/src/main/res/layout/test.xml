@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/ac_et_WDTag"
+            android:text="温"
+            android:textSize="25dp"
+            android:padding="20dp"
+            android:layout_alignParentLeft="true"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/ac_et_AvgTag"
+            android:text="Avg:"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ac_et_WDTag"/>
+        <TextView
+            android:id="@+id/ac_et_AvgText"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/ac_et_AvgTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/ac_et_MaxTag"
+            android:text="Max:"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ac_et_WDTag"
+            android:layout_below="@+id/ac_et_AvgText"/>
+        <TextView
+            android:id="@+id/ac_et_MaxText"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/ac_et_MaxTag"
+            android:layout_below="@+id/ac_et_AvgText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/ac_et_MinTag"
+            android:text="Min:"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ac_et_WDTag"
+            android:layout_below="@+id/ac_et_MaxTag"/>
+        <TextView
+            android:id="@+id/ac_et_MinText"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/ac_et_MinTag"
+            android:layout_below="@+id/ac_et_MaxText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+</RelativeLayout>
